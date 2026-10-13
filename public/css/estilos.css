@@ -1,0 +1,94 @@
+:root {
+  --primario: #601d89;
+  --primario-oscuro: #521468;
+  --fondo: #f4d9ff;
+  --borde: #bb9cb6;
+  --texto: #25303b;
+  --error: #b00020;
+  --error-fondo: #c293c3;
+  --foco: #ff1cac;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+:focus-visible { outline: 3px solid var(--foco); outline-offset: 2px; }
+
+.contenedor { width: 90%; max-width: 1000px; margin: 0 auto; }
+
+header { background: var(--primario); color: #fff; padding: 1rem 0; }
+header .contenedor { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+
+nav ul { display: flex; gap: 1rem; list-style: none; }
+nav a { color: #fff; text-decoration: none; font-weight: 600; padding: 0.3rem 0.6rem; border-radius: 4px; }
+nav a:hover { background: var(--primario-oscuro); }
+
+main { flex: 1; padding: 2rem 0; }
+main p { margin: 0.75rem 0; }
+
+.boton {
+  display: inline-block;
+  background: var(--primario);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  margin: 1rem 0.5rem 0 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+.boton:hover { background: var(--primario-oscuro); }
+
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.tarjeta, .formulario, .vacio {
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+.tarjeta h2 { color: var(--primario); margin-bottom: 0.5rem; }
+.detalle { max-width: 600px; margin: 1.5rem auto; }
+
+.vacio { text-align: center; margin-top: 1.5rem; border-style: dashed; }
+
+.formulario { max-width: 550px; margin: 1.5rem auto; }
+.campo { margin-bottom: 1.2rem; }
+.campo label { display: block; font-weight: 600; margin-bottom: 0.3rem; }
+.campo input, .campo select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--borde);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.alerta-error {
+  background: var(--error-fondo);
+  color: var(--error);
+  border: 1px solid var(--error);
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+.alerta-error ul { margin: 0.5rem 0 0 1.2rem; }
+
+footer { background: #e3eaf3; padding: 1.2rem 0; text-align: center; font-size: 0.9rem; }
+.solicitud { font-size: 0.75rem; color: #5b6773; }
